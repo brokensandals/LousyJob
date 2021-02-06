@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1628007C25CE85BD005A6755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628007B25CE85BD005A6755 /* AppDelegate.swift */; };
+		1628007E25CE85BD005A6755 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628007D25CE85BD005A6755 /* ContentView.swift */; };
+		1628008025CE85BE005A6755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1628007F25CE85BE005A6755 /* Assets.xcassets */; };
+		1628008325CE85BE005A6755 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1628008225CE85BE005A6755 /* Preview Assets.xcassets */; };
+		1628008625CE85BE005A6755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1628008425CE85BE005A6755 /* Main.storyboard */; };
+		1628009225CE85BE005A6755 /* LousyJobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628009125CE85BE005A6755 /* LousyJobTests.swift */; };
+		1628009D25CE85BE005A6755 /* LousyJobUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628009C25CE85BE005A6755 /* LousyJobUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1628008E25CE85BE005A6755 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1628007025CE85BD005A6755 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1628007725CE85BD005A6755;
+			remoteInfo = LousyJob;
+		};
+		1628009925CE85BE005A6755 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1628007025CE85BD005A6755 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1628007725CE85BD005A6755;
+			remoteInfo = LousyJob;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1628007825CE85BD005A6755 /* LousyJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LousyJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1628007B25CE85BD005A6755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1628007D25CE85BD005A6755 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1628007F25CE85BE005A6755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1628008225CE85BE005A6755 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1628008525CE85BE005A6755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1628008725CE85BE005A6755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1628008825CE85BE005A6755 /* LousyJob.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LousyJob.entitlements; sourceTree = "<group>"; };
+		1628008D25CE85BE005A6755 /* LousyJobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LousyJobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1628009125CE85BE005A6755 /* LousyJobTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LousyJobTests.swift; sourceTree = "<group>"; };
+		1628009325CE85BE005A6755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1628009825CE85BE005A6755 /* LousyJobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LousyJobUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1628009C25CE85BE005A6755 /* LousyJobUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LousyJobUITests.swift; sourceTree = "<group>"; };
+		1628009E25CE85BE005A6755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1628007525CE85BD005A6755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628008A25CE85BE005A6755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628009525CE85BE005A6755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628006F25CE85BD005A6755 = {
+			isa = PBXGroup;
+			children = (
+				1628007A25CE85BD005A6755 /* LousyJob */,
+				1628009025CE85BE005A6755 /* LousyJobTests */,
+				1628009B25CE85BE005A6755 /* LousyJobUITests */,
+				1628007925CE85BD005A6755 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1628007925CE85BD005A6755 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1628007825CE85BD005A6755 /* LousyJob.app */,
+				1628008D25CE85BE005A6755 /* LousyJobTests.xctest */,
+				1628009825CE85BE005A6755 /* LousyJobUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1628007A25CE85BD005A6755 /* LousyJob */ = {
+			isa = PBXGroup;
+			children = (
+				1628007B25CE85BD005A6755 /* AppDelegate.swift */,
+				1628007D25CE85BD005A6755 /* ContentView.swift */,
+				1628007F25CE85BE005A6755 /* Assets.xcassets */,
+				1628008425CE85BE005A6755 /* Main.storyboard */,
+				1628008725CE85BE005A6755 /* Info.plist */,
+				1628008825CE85BE005A6755 /* LousyJob.entitlements */,
+				1628008125CE85BE005A6755 /* Preview Content */,
+			);
+			path = LousyJob;
+			sourceTree = "<group>";
+		};
+		1628008125CE85BE005A6755 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1628008225CE85BE005A6755 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1628009025CE85BE005A6755 /* LousyJobTests */ = {
+			isa = PBXGroup;
+			children = (
+				1628009125CE85BE005A6755 /* LousyJobTests.swift */,
+				1628009325CE85BE005A6755 /* Info.plist */,
+			);
+			path = LousyJobTests;
+			sourceTree = "<group>";
+		};
+		1628009B25CE85BE005A6755 /* LousyJobUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1628009C25CE85BE005A6755 /* LousyJobUITests.swift */,
+				1628009E25CE85BE005A6755 /* Info.plist */,
+			);
+			path = LousyJobUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1628007725CE85BD005A6755 /* LousyJob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162800A125CE85BE005A6755 /* Build configuration list for PBXNativeTarget "LousyJob" */;
+			buildPhases = (
+				1628007425CE85BD005A6755 /* Sources */,
+				1628007525CE85BD005A6755 /* Frameworks */,
+				1628007625CE85BD005A6755 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LousyJob;
+			productName = LousyJob;
+			productReference = 1628007825CE85BD005A6755 /* LousyJob.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1628008C25CE85BE005A6755 /* LousyJobTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162800A425CE85BE005A6755 /* Build configuration list for PBXNativeTarget "LousyJobTests" */;
+			buildPhases = (
+				1628008925CE85BE005A6755 /* Sources */,
+				1628008A25CE85BE005A6755 /* Frameworks */,
+				1628008B25CE85BE005A6755 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1628008F25CE85BE005A6755 /* PBXTargetDependency */,
+			);
+			name = LousyJobTests;
+			productName = LousyJobTests;
+			productReference = 1628008D25CE85BE005A6755 /* LousyJobTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1628009725CE85BE005A6755 /* LousyJobUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162800A725CE85BE005A6755 /* Build configuration list for PBXNativeTarget "LousyJobUITests" */;
+			buildPhases = (
+				1628009425CE85BE005A6755 /* Sources */,
+				1628009525CE85BE005A6755 /* Frameworks */,
+				1628009625CE85BE005A6755 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1628009A25CE85BE005A6755 /* PBXTargetDependency */,
+			);
+			name = LousyJobUITests;
+			productName = LousyJobUITests;
+			productReference = 1628009825CE85BE005A6755 /* LousyJobUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1628007025CE85BD005A6755 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					1628007725CE85BD005A6755 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					1628008C25CE85BE005A6755 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 1628007725CE85BD005A6755;
+					};
+					1628009725CE85BE005A6755 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 1628007725CE85BD005A6755;
+					};
+				};
+			};
+			buildConfigurationList = 1628007325CE85BD005A6755 /* Build configuration list for PBXProject "LousyJob" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1628006F25CE85BD005A6755;
+			productRefGroup = 1628007925CE85BD005A6755 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1628007725CE85BD005A6755 /* LousyJob */,
+				1628008C25CE85BE005A6755 /* LousyJobTests */,
+				1628009725CE85BE005A6755 /* LousyJobUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1628007625CE85BD005A6755 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1628008625CE85BE005A6755 /* Main.storyboard in Resources */,
+				1628008325CE85BE005A6755 /* Preview Assets.xcassets in Resources */,
+				1628008025CE85BE005A6755 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628008B25CE85BE005A6755 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628009625CE85BE005A6755 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1628007425CE85BD005A6755 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1628007E25CE85BD005A6755 /* ContentView.swift in Sources */,
+				1628007C25CE85BD005A6755 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628008925CE85BE005A6755 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1628009225CE85BE005A6755 /* LousyJobTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628009425CE85BE005A6755 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1628009D25CE85BE005A6755 /* LousyJobUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1628008F25CE85BE005A6755 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1628007725CE85BD005A6755 /* LousyJob */;
+			targetProxy = 1628008E25CE85BE005A6755 /* PBXContainerItemProxy */;
+		};
+		1628009A25CE85BE005A6755 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1628007725CE85BD005A6755 /* LousyJob */;
+			targetProxy = 1628009925CE85BE005A6755 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1628008425CE85BE005A6755 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1628008525CE85BE005A6755 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1628009F25CE85BE005A6755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		162800A025CE85BE005A6755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		162800A225CE85BE005A6755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LousyJob/LousyJob.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"LousyJob/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LousyJob/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.brokensandals.LousyJob;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		162800A325CE85BE005A6755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LousyJob/LousyJob.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"LousyJob/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LousyJob/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.brokensandals.LousyJob;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		162800A525CE85BE005A6755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LousyJobTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.brokensandals.LousyJobTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LousyJob.app/Contents/MacOS/LousyJob";
+			};
+			name = Debug;
+		};
+		162800A625CE85BE005A6755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LousyJobTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.brokensandals.LousyJobTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LousyJob.app/Contents/MacOS/LousyJob";
+			};
+			name = Release;
+		};
+		162800A825CE85BE005A6755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LousyJobUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.brokensandals.LousyJobUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LousyJob;
+			};
+			name = Debug;
+		};
+		162800A925CE85BE005A6755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LousyJobUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.brokensandals.LousyJobUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LousyJob;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1628007325CE85BD005A6755 /* Build configuration list for PBXProject "LousyJob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1628009F25CE85BE005A6755 /* Debug */,
+				162800A025CE85BE005A6755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		162800A125CE85BE005A6755 /* Build configuration list for PBXNativeTarget "LousyJob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162800A225CE85BE005A6755 /* Debug */,
+				162800A325CE85BE005A6755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		162800A425CE85BE005A6755 /* Build configuration list for PBXNativeTarget "LousyJobTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162800A525CE85BE005A6755 /* Debug */,
+				162800A625CE85BE005A6755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		162800A725CE85BE005A6755 /* Build configuration list for PBXNativeTarget "LousyJobUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162800A825CE85BE005A6755 /* Debug */,
+				162800A925CE85BE005A6755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1628007025CE85BD005A6755 /* Project object */;
+}
