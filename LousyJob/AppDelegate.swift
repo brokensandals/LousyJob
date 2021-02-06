@@ -13,14 +13,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
     var statusBarItem: NSStatusItem!
+    @IBOutlet weak var statusBarMenu: NSMenu?
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let contentView = ContentView()
-        
-        self.statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength);
+        statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength);
         if let button = self.statusBarItem.button {
             button.title = "¯\\_(ツ)_/¯"
+        }
+        
+        if let statusBarMenu = statusBarMenu {
+            statusBarItem.menu = statusBarMenu
         }
     }
 
