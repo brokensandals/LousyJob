@@ -13,6 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
     var statusBarItem: NSStatusItem!
+    var config: ConfigRoot?
+    var jobManagers: [BadManager] = []
     @IBOutlet weak var statusBarMenu: NSMenu?
 
 
@@ -25,11 +27,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let statusBarMenu = statusBarMenu {
             statusBarItem.menu = statusBarMenu
         }
+        
+        reload()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
     }
 
-
+    @objc
+    func reload() {
+        jobManagers = []
+        config = loadUserLousyJobConfig();
+        let menu = statusBarItem.menu!
+        menu.items.removeAll()
+        for job in config!.jobs {
+            let manager = BadManager(configJob: job)
+            jobManagers.append(manager)
+            let jobitem = NSMenuItem()
+            jobitem.title = job.title
+            let jobmenu = NSMenu()
+            jobitem.submenu = jobmenu
+            // fixme this is not how you attach an action
+            jobmenu.addItem(withTitle: "Run now", action: #selector(manager.run), keyEquivalent: "")
+            menu.addItem(jobitem)
+        }
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Reload", action: #selector(self.reload), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate(_:)), keyEquivalent: ""))
+    }
 }
 

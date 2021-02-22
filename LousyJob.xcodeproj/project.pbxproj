@@ -14,6 +14,8 @@
 		1628008625CE85BE005A6755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1628008425CE85BE005A6755 /* Main.storyboard */; };
 		1628009225CE85BE005A6755 /* LousyJobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628009125CE85BE005A6755 /* LousyJobTests.swift */; };
 		1628009D25CE85BE005A6755 /* LousyJobUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628009C25CE85BE005A6755 /* LousyJobUITests.swift */; };
+		16D625DB25E330E600F5AC1D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D625DA25E330E600F5AC1D /* Config.swift */; };
+		16D625E025E33EF200F5AC1D /* BadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D625DF25E33EF200F5AC1D /* BadManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		1628009825CE85BE005A6755 /* LousyJobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LousyJobUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1628009C25CE85BE005A6755 /* LousyJobUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LousyJobUITests.swift; sourceTree = "<group>"; };
 		1628009E25CE85BE005A6755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D625DA25E330E600F5AC1D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		16D625DF25E33EF200F5AC1D /* BadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				1628008725CE85BE005A6755 /* Info.plist */,
 				1628008825CE85BE005A6755 /* LousyJob.entitlements */,
 				1628008125CE85BE005A6755 /* Preview Content */,
+				16D625DA25E330E600F5AC1D /* Config.swift */,
+				16D625DF25E33EF200F5AC1D /* BadManager.swift */,
 			);
 			path = LousyJob;
 			sourceTree = "<group>";
@@ -266,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1628007E25CE85BD005A6755 /* ContentView.swift in Sources */,
+				16D625E025E33EF200F5AC1D /* BadManager.swift in Sources */,
 				1628007C25CE85BD005A6755 /* AppDelegate.swift in Sources */,
+				16D625DB25E330E600F5AC1D /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
