@@ -10,6 +10,7 @@ import Foundation
 struct ConfigJob: Decodable {
     let arguments: [String]?
     let executable: String
+    let id: String
     let schedule: String?
     let title: String
 }

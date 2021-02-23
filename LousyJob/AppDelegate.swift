@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     var statusBarItem: NSStatusItem!
     var config: ConfigRoot?
-    var jobManagers: [BadManager] = []
+    var jobManagers: [String: BadManager] = [:]
     @IBOutlet weak var statusBarMenu: NSMenu?
 
 
@@ -36,13 +36,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc
     func reload() {
-        jobManagers = []
         config = loadUserLousyJobConfig();
         let menu = statusBarItem.menu!
         menu.items.removeAll()
         for job in config!.jobs {
-            let manager = BadManager(configJob: job)
-            jobManagers.append(manager)
+            let manager = jobManagers[job.id] ?? BadManager(configJob: job)
+            jobManagers[job.id] = manager
             let jobitem = NSMenuItem()
             jobitem.title = job.title
             let jobmenu = NSMenu()

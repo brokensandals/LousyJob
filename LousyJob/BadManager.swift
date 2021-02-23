@@ -9,6 +9,7 @@ import Foundation
 
 class BadManager {
     var configJob: ConfigJob
+    var process: Process?
     
     init(configJob: ConfigJob) {
         self.configJob = configJob
@@ -16,9 +17,9 @@ class BadManager {
     
     @objc
     func run() {
-        let process = Process()
-        process.launchPath = configJob.executable
-        process.arguments = configJob.arguments
-        process.launch()
+        process = Process()
+        process!.launchPath = configJob.executable
+        process!.arguments = configJob.arguments
+        process!.launch()
     }
 }
