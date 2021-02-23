@@ -47,8 +47,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             jobitem.title = job.title
             let jobmenu = NSMenu()
             jobitem.submenu = jobmenu
-            // fixme this is not how you attach an action
-            jobmenu.addItem(withTitle: "Run now", action: #selector(manager.run), keyEquivalent: "")
+            let runitem = NSMenuItem()
+            runitem.title = "Run now"
+            runitem.target = manager
+            runitem.action = #selector(manager.run)
+            jobmenu.addItem(runitem)
             menu.addItem(jobitem)
         }
         menu.addItem(NSMenuItem.separator())
