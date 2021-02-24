@@ -6,6 +6,7 @@ class BadManager {
     var menuItem: NSMenuItem
     var menuItemRun: NSMenuItem
     var menuItemKill: NSMenuItem
+    var menuItemCopyPid: NSMenuItem
     
     init(configJob: ConfigJob) {
         self.configJob = configJob
@@ -14,15 +15,20 @@ class BadManager {
         submenu.autoenablesItems = false
         menuItem.submenu = submenu
         menuItemRun = NSMenuItem()
-        menuItemRun.title = "Run now"
+        menuItemRun.title = "Run"
         menuItemRun.action = #selector(self.run)
         submenu.addItem(menuItemRun)
         menuItemKill = NSMenuItem()
         menuItemKill.title = "Kill"
         menuItemKill.action = #selector(self.kill)
         submenu.addItem(menuItemKill)
+        menuItemCopyPid = NSMenuItem()
+        menuItemCopyPid.title = "Kill"
+        menuItemCopyPid.action = #selector(self.copyPid)
+        submenu.addItem(menuItemCopyPid)
         menuItemRun.target = self
         menuItemKill.target = self
+        menuItemCopyPid.target = self
     }
     
     @objc func recheck() {
@@ -33,6 +39,13 @@ class BadManager {
         }
         menuItemRun.isEnabled = (process == nil)
         menuItemKill.isEnabled = (process != nil)
+        if let pr = process {
+            menuItemCopyPid.isEnabled = true
+            menuItemCopyPid.title = "Copy pid \(pr.processIdentifier)"
+        } else {
+            menuItemCopyPid.isEnabled = false
+            menuItemCopyPid.title = "Copy pid"
+        }
     }
     
     func reload() {
@@ -54,5 +67,13 @@ class BadManager {
     
     @objc func kill() {
         process?.terminate()
+    }
+    
+    @objc func copyPid() {
+        if let pr = process {
+            let pb = NSPasteboard.general
+            pb.declareTypes([.string], owner: nil)
+            pb.setString("\(pr.processIdentifier)", forType: .string)
+        }
     }
 }
