@@ -10,6 +10,7 @@ struct ConfigJob: Decodable {
 
 struct ConfigRoot: Decodable {
     let jobs: [ConfigJob]
+    let logdir: String
 }
 
 func loadUserLousyJobConfig() -> ConfigRoot {

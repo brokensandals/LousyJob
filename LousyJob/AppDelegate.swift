@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let menu = statusBarItem.menu!
         menu.items.removeAll()
         for job in config!.jobs {
-            let manager = jobManagers[job.id] ?? BadManager(configJob: job)
+            let manager = jobManagers[job.id] ?? BadManager(config: config!, configJob: job)
             jobManagers[job.id] = manager
             manager.reload()
             menu.addItem(manager.menuItem)

@@ -1,6 +1,7 @@
 import Cocoa
 
 class BadManager {
+    var config: ConfigRoot
     var configJob: ConfigJob
     var process: Process?
     var menuItem: NSMenuItem
@@ -8,7 +9,11 @@ class BadManager {
     var menuItemKill: NSMenuItem
     var menuItemCopyPid: NSMenuItem
     
-    init(configJob: ConfigJob) {
+    var fout: FileHandle?
+    var ferr: FileHandle?
+    
+    init(config: ConfigRoot, configJob: ConfigJob) {
+        self.config = config
         self.configJob = configJob
         menuItem = NSMenuItem()
         let submenu = NSMenu()
@@ -36,6 +41,10 @@ class BadManager {
             if !process!.isRunning {
                 process = nil
             }
+            try? fout?.close()
+            fout = nil
+            try? ferr?.close()
+            ferr = nil
         }
         menuItemRun.isEnabled = (process == nil)
         menuItemKill.isEnabled = (process != nil)
@@ -61,6 +70,24 @@ class BadManager {
         process!.launchPath = configJob.executable
         process!.arguments = configJob.arguments
         process!.terminationHandler = { p in self.recheck() }
+        let foutpath = NSString(string: "\(config.logdir)/\(configJob.id).out").expandingTildeInPath
+        if !FileManager.default.fileExists(atPath: foutpath) {
+            FileManager.default.createFile(atPath: foutpath, contents: nil, attributes: nil)
+        }
+        fout = FileHandle(forWritingAtPath: foutpath)
+        if #available(OSX 10.15.4, *) {
+            try! fout!.seekToEnd()
+        }
+        process!.standardOutput = fout!
+        let ferrpath = NSString(string: "\(config.logdir)/\(configJob.id).err").expandingTildeInPath
+        if !FileManager.default.fileExists(atPath: ferrpath) {
+            FileManager.default.createFile(atPath: ferrpath, contents: nil, attributes: nil)
+        }
+        ferr = FileHandle(forWritingAtPath: ferrpath)
+        if #available(OSX 10.15.4, *) {
+            try! ferr!.seekToEnd()
+        }
+        process!.standardError = ferr!
         process!.launch()
         recheck()
     }
