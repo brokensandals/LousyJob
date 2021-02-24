@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  LousyJob
-//
-//  Created by Jacob Williams on 2/6/21.
-//
-
 import SwiftUI
 
 struct ContentView: View {

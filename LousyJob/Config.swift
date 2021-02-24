@@ -1,10 +1,3 @@
-//
-//  Config.swift
-//  LousyJob
-//
-//  Created by Jacob Williams on 2/21/21.
-//
-
 import Foundation
 
 struct ConfigJob: Decodable {
