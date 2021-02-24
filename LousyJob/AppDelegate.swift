@@ -27,8 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
     }
 
-    @objc
-    func reload() {
+    @objc func reload() {
         config = loadUserLousyJobConfig();
         let menu = statusBarItem.menu!
         menu.items.removeAll()
