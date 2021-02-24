@@ -6,7 +6,6 @@ class BadManager {
     var menuItem: NSMenuItem
     var menuItemRun: NSMenuItem
     var menuItemKill: NSMenuItem
-    var timer: Timer?
     
     init(configJob: ConfigJob) {
         self.configJob = configJob
@@ -30,7 +29,6 @@ class BadManager {
         if process != nil {
             if !process!.isRunning {
                 process = nil
-                timer?.invalidate()
             }
         }
         menuItemRun.isEnabled = (process == nil)
@@ -49,10 +47,8 @@ class BadManager {
         process = Process()
         process!.launchPath = configJob.executable
         process!.arguments = configJob.arguments
+        process!.terminationHandler = { p in self.recheck() }
         process!.launch()
-        timer = Timer(timeInterval: 3.0, target: self, selector: #selector(self.recheck), userInfo: nil, repeats: true)
-        timer!.tolerance = 1.0
-        RunLoop.current.add(timer!, forMode: .common)
         recheck()
     }
     
