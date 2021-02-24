@@ -34,6 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         for job in config!.jobs {
             let manager = jobManagers[job.id] ?? BadManager(config: config!, configJob: job)
             jobManagers[job.id] = manager
+            manager.configJob = job
             manager.reload()
             menu.addItem(manager.menuItem)
         }
