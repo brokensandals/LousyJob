@@ -5,6 +5,7 @@ class BadManager {
     var process: Process?
     var menuItem: NSMenuItem
     var menuItemRun: NSMenuItem
+    var menuItemKill: NSMenuItem
     var timer: Timer?
     
     init(configJob: ConfigJob) {
@@ -15,9 +16,14 @@ class BadManager {
         menuItem.submenu = submenu
         menuItemRun = NSMenuItem()
         menuItemRun.title = "Run now"
-        menuItemRun.target = self
         menuItemRun.action = #selector(self.run)
         submenu.addItem(menuItemRun)
+        menuItemKill = NSMenuItem()
+        menuItemKill.title = "Kill"
+        menuItemKill.action = #selector(self.kill)
+        submenu.addItem(menuItemKill)
+        menuItemRun.target = self
+        menuItemKill.target = self
     }
     
     @objc func recheck() {
@@ -28,6 +34,7 @@ class BadManager {
             }
         }
         menuItemRun.isEnabled = (process == nil)
+        menuItemKill.isEnabled = (process != nil)
     }
     
     func reload() {
@@ -47,5 +54,9 @@ class BadManager {
         timer!.tolerance = 1.0
         RunLoop.current.add(timer!, forMode: .common)
         recheck()
+    }
+    
+    @objc func kill() {
+        process?.terminate()
     }
 }
