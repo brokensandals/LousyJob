@@ -49,14 +49,20 @@ class BadManager {
     }
     
     @objc func recheck() {
-        if process != nil {
-            if !process!.isRunning {
+        if let pr = process {
+            if !pr.isRunning {
+                if pr.terminationStatus != 0 {
+                    let notif = NSUserNotification()
+                    notif.title = configJob.title
+                    notif.subtitle = "Failed with exit code \(pr.terminationStatus)"
+                    NSUserNotificationCenter.default.deliver(notif)
+                }
                 process = nil
+                try? fout?.close()
+                fout = nil
+                try? ferr?.close()
+                ferr = nil
             }
-            try? fout?.close()
-            fout = nil
-            try? ferr?.close()
-            ferr = nil
         }
         menuItemRun.isEnabled = (process == nil)
         menuItemKill.isEnabled = (process != nil)
