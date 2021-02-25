@@ -8,6 +8,8 @@ class BadManager {
     var menuItemRun: NSMenuItem
     var menuItemKill: NSMenuItem
     var menuItemCopyPid: NSMenuItem
+    var menuItemViewStdout: NSMenuItem
+    var menuItemViewStderr: NSMenuItem
     
     var fout: FileHandle?
     var ferr: FileHandle?
@@ -31,9 +33,19 @@ class BadManager {
         menuItemCopyPid.title = "Kill"
         menuItemCopyPid.action = #selector(self.copyPid)
         submenu.addItem(menuItemCopyPid)
+        menuItemViewStdout = NSMenuItem()
+        menuItemViewStdout.title = "View stdout log"
+        menuItemViewStdout.action = #selector(self.viewStdout)
+        submenu.addItem(menuItemViewStdout)
+        menuItemViewStderr = NSMenuItem()
+        menuItemViewStderr.title = "View stderr log"
+        menuItemViewStderr.action = #selector(self.viewStderr)
+        submenu.addItem(menuItemViewStderr)
         menuItemRun.target = self
         menuItemKill.target = self
         menuItemCopyPid.target = self
+        menuItemViewStdout.target = self
+        menuItemViewStderr.target = self
     }
     
     @objc func recheck() {
@@ -70,7 +82,7 @@ class BadManager {
         process!.launchPath = configJob.executable
         process!.arguments = configJob.arguments
         process!.terminationHandler = { p in self.recheck() }
-        let foutpath = NSString(string: "\(config.logdir)/\(configJob.id).out").expandingTildeInPath
+        let foutpath = stdoutLogPath()
         if !FileManager.default.fileExists(atPath: foutpath) {
             FileManager.default.createFile(atPath: foutpath, contents: nil, attributes: nil)
         }
@@ -79,7 +91,7 @@ class BadManager {
             try! fout!.seekToEnd()
         }
         process!.standardOutput = fout!
-        let ferrpath = NSString(string: "\(config.logdir)/\(configJob.id).err").expandingTildeInPath
+        let ferrpath = stderrLogPath()
         if !FileManager.default.fileExists(atPath: ferrpath) {
             FileManager.default.createFile(atPath: ferrpath, contents: nil, attributes: nil)
         }
@@ -102,5 +114,26 @@ class BadManager {
             pb.declareTypes([.string], owner: nil)
             pb.setString("\(pr.processIdentifier)", forType: .string)
         }
+    }
+    
+    
+    @objc func viewStdout() {
+        viewInConsole(path: stdoutLogPath())
+    }
+    
+    @objc func viewStderr() {
+        viewInConsole(path: stderrLogPath())
+    }
+    
+    private func viewInConsole(path: String) {
+        NSWorkspace.shared.openFile(path, withApplication: "Console")
+    }
+    
+    private func stdoutLogPath() -> String {
+        return NSString(string: "\(config.logdir)/\(configJob.id).out").expandingTildeInPath
+    }
+    
+    private func stderrLogPath() -> String {
+        return NSString(string: "\(config.logdir)/\(configJob.id).err").expandingTildeInPath
     }
 }
