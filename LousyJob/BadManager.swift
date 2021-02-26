@@ -57,6 +57,8 @@ class BadManager {
                     notif.subtitle = "Failed with exit code \(pr.terminationStatus)"
                     NSUserNotificationCenter.default.deliver(notif)
                 }
+                let inc = Incident(kind: .finished, date: .init(), jobId: configJob.id, pid: pr.processIdentifier, exitCode: pr.terminationStatus, executable: pr.launchPath, arguments: pr.arguments)
+                record(incident: inc)
                 process = nil
                 try? fout?.close()
                 fout = nil
@@ -107,7 +109,30 @@ class BadManager {
         }
         process!.standardError = ferr!
         process!.launch()
+        
+        let inc = Incident(kind: .started, date: .init(), jobId: configJob.id, pid: process!.processIdentifier, exitCode: nil, executable: process!.launchPath, arguments: process!.arguments)
+        record(incident: inc)
+        
         recheck()
+    }
+    
+    func record(incident: Incident) {
+        let fpath = lousyjobLogPath()
+        if !FileManager.default.fileExists(atPath: fpath) {
+            FileManager.default.createFile(atPath: fpath, contents: nil, attributes: nil)
+        }
+        if let flj = FileHandle(forWritingAtPath: fpath) {
+            if #available(OSX 10.15.4, *) {
+                try! flj.seekToEnd()
+            } else {
+                flj.seekToEndOfFile()
+            }
+            flj.write(incident.toJSON())
+            flj.write("\n".data(using: .utf8)!)
+            try? flj.close()
+        } else {
+            // TODO
+        }
     }
     
     @objc func kill() {
@@ -141,5 +166,9 @@ class BadManager {
     
     private func stderrLogPath() -> String {
         return NSString(string: "\(config.logdir)/\(configJob.id).err").expandingTildeInPath
+    }
+    
+    private func lousyjobLogPath() -> String {
+        return NSString(string: "\(config.logdir)/\(configJob.id).lousyjob.jsonl").expandingTildeInPath
     }
 }
