@@ -96,6 +96,7 @@ class BadManager {
     }
     
     func reload() {
+        loadLastIncident()
         refresh()
         menuItem.title = configJob.title
     }
@@ -128,6 +129,18 @@ class BadManager {
         record(incident: inc)
         
         refresh()
+    }
+    
+    func loadLastIncident() {
+        lastinc = nil
+        let flogpath = lousyjobLogPath()
+        if FileManager.default.fileExists(atPath: flogpath) {
+            // TODO this is wasteful, we only need to read near the end of the file
+            let flogstr = try! String(contentsOfFile: flogpath)
+            if let line = flogstr.trimmingCharacters(in: .newlines).split(separator: "\n").last {
+                lastinc = Incident.from(json: String(line))
+            }
+        }
     }
     
     func record(incident: Incident) {

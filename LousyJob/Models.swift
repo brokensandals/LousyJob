@@ -35,4 +35,10 @@ struct Incident: Codable {
         enc.dateEncodingStrategy = .iso8601
         return try! enc.encode(self)
     }
+    
+    static func from(json: String) -> Incident {
+        let dec = JSONDecoder()
+        dec.dateDecodingStrategy = .iso8601
+        return try! dec.decode(Incident.self, from: json.data(using: .utf8)!)
+    }
 }
