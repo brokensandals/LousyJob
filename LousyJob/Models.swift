@@ -4,6 +4,7 @@ struct ConfigJob: Decodable {
     let arguments: [String]?
     let executable: String
     let id: String
+    let interval: Int32?
     let schedule: String?
     let title: String
 }

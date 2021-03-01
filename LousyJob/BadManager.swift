@@ -12,6 +12,7 @@ class BadManager {
     var menuItemViewStdout: NSMenuItem
     var menuItemViewStderr: NSMenuItem
     var lastinc: Incident?
+    var timer: Timer?
     
     var fout: FileHandle?
     var ferr: FileHandle?
@@ -76,6 +77,31 @@ class BadManager {
         } else {
             menuItemCopyPid.isEnabled = false
             menuItemCopyPid.title = "Copy pid"
+        }
+        checkDue()
+    }
+    
+    func checkDue() {
+        if process != nil {
+            return
+        }
+
+        if let tim = timer {
+            tim.invalidate()
+            timer = nil
+        }
+        if let interval = configJob.interval {
+            if let inc = lastinc {
+                let due = inc.date + TimeInterval(interval)
+                if due <= Date() {
+                    run()
+                } else {
+                    timer = Timer(fireAt: due, interval: 0, target: self, selector: #selector(self.run), userInfo: nil, repeats: false)
+                    RunLoop.current.add(timer!, forMode: .default)
+                }
+            } else {
+                run()
+            }
         }
     }
     
