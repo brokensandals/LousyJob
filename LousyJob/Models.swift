@@ -10,6 +10,7 @@ struct ConfigJob: Decodable {
 }
 
 struct ConfigRoot: Decodable {
+    let interval: Int32
     let jobs: [ConfigJob]
     let logdir: String
 }
