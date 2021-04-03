@@ -50,6 +50,7 @@
 		1628009825CE85BE005A6755 /* LousyJobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LousyJobUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1628009C25CE85BE005A6755 /* LousyJobUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LousyJobUITests.swift; sourceTree = "<group>"; };
 		1628009E25CE85BE005A6755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		168DAB032617E6F200F874C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		16D625DA25E330E600F5AC1D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		16D625DF25E33EF200F5AC1D /* BadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +83,7 @@
 		1628006F25CE85BD005A6755 = {
 			isa = PBXGroup;
 			children = (
+				168DAB032617E6F200F874C1 /* README.md */,
 				1628007A25CE85BD005A6755 /* LousyJob */,
 				1628009025CE85BE005A6755 /* LousyJobTests */,
 				1628009B25CE85BE005A6755 /* LousyJobUITests */,
