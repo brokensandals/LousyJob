@@ -3,7 +3,7 @@
 This is a very simple background job runner for macOS.
 I use it for things like periodically exporting data from cloud services.
 
-![screenshot](docs/sreenshot.png)
+![screenshot](docs/screenshot.png)
 
 ## Motivations
 
