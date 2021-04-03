@@ -11,6 +11,7 @@ class BadManager {
     var menuItemCopyPid: NSMenuItem
     var menuItemViewStdout: NSMenuItem
     var menuItemViewStderr: NSMenuItem
+    var menuItemViewLousyjobLog: NSMenuItem
     var lastinc: Incident?
     
     var fout: FileHandle?
@@ -43,11 +44,16 @@ class BadManager {
         menuItemViewStderr.title = "View stderr log"
         menuItemViewStderr.action = #selector(self.viewStderr)
         submenu.addItem(menuItemViewStderr)
+        menuItemViewLousyjobLog = NSMenuItem()
+        menuItemViewLousyjobLog.title = "View lousyjob log"
+        menuItemViewLousyjobLog.action = #selector(self.viewLousyjobLog)
+        submenu.addItem(menuItemViewLousyjobLog)
         menuItemRun.target = self
         menuItemKill.target = self
         menuItemCopyPid.target = self
         menuItemViewStdout.target = self
         menuItemViewStderr.target = self
+        menuItemViewLousyjobLog.target = self
     }
     
     @objc func recheck() {
@@ -196,6 +202,10 @@ class BadManager {
     
     @objc func viewStderr() {
         viewInConsole(path: stderrLogPath())
+    }
+    
+    @objc func viewLousyjobLog() {
+        viewInConsole(path: lousyjobLogPath())
     }
     
     private func viewInConsole(path: String) {
